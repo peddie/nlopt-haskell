@@ -1,7 +1,10 @@
 name:                nlopt-haskell
 version:             0.1.0.0
 synopsis:            Low-level bindings to the NLOPT optimization library
--- description:
+description: This library provides low-level bindings to
+             <http://ab-initio.mit.edu/wiki/index.php/NLopt the NLOPT optimization library>.
+             You will need the NLOPT library and development headers installed.
+
 homepage:            https://github.com/peddie/nlopt-haskell
 license:             BSD3
 license-file:        LICENSE
@@ -14,6 +17,10 @@ extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 bug-reports:         https://github.com/peddie/nlopt-haskell/issues
 
+source-repository head
+  type:                git
+  location:            https://github.com/peddie/nlopt-haskell
+
 flag link-nlopt-cxx
      description: Link with @-lnlopt_cxx@ instead of @-lnlopt@
      default: False
@@ -21,8 +28,6 @@ flag link-nlopt-cxx
 
 library
   exposed-modules: Numeric.Optimization.NLOPT.Bindings
-  -- other-modules:
-  -- other-extensions:
   build-depends:       base >=4.9 && <4.10
                      , vector >= 0.10
   hs-source-dirs:      src
@@ -37,6 +42,7 @@ test-suite example
   type: exitcode-stdio-1.0
   main-is: example.hs
   hs-source-dirs: tests
+  default-language:    Haskell2010
   build-depends: base >= 4.9 && < 4.10
                , nlopt-haskell
                , vector >= 0.10

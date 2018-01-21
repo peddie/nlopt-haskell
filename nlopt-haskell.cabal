@@ -1,5 +1,5 @@
 name:                nlopt-haskell
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Low-level bindings to the NLOPT optimization library
 description: This library provides low-level bindings to
              <http://ab-initio.mit.edu/wiki/index.php/NLopt the NLOPT optimization library>.
